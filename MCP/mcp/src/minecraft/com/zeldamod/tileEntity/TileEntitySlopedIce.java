@@ -1,25 +1,25 @@
-package com.zeldamod.slopedice;
+package com.zeldamod.tileEntity;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.zeldamod.ZeldaMod;
+import com.zeldamod.misc.IceTriangle;
 
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.world.World;
+import net.minecraft.tileentity.TileEntity;
 
-public class ItemSlopedIce extends Item {
+public class TileEntitySlopedIce extends TileEntity {
+	
+	public List<IceTriangle> triangles;
 
-	public ItemSlopedIce(int par1) {
-		super(par1);
+	public TileEntitySlopedIce() {
+		
 	}
 	
-	public static NBTTagCompound getNBTWithTriangles(List<IceTriangle> triangles)
-	{		
-		NBTTagCompound nbt = new NBTTagCompound();
+	@Override
+	public void writeToNBT(NBTTagCompound par1nbtTagCompound)
+	{
+		NBTTagCompound nbt = par1nbtTagCompound;
 		for (int i = 0; i < triangles.size(); ++i) {
 			IceTriangle iceTriangle = triangles.get(i);
 			NBTTagCompound nbt_triangle = new NBTTagCompound();
@@ -38,16 +38,13 @@ public class ItemSlopedIce extends Item {
 			nbt.setCompoundTag("triangle_" + i, nbt_triangle);
 		}
 		nbt.setInteger("triangle_count", triangles.size());
-		
-		return nbt;
 	}
 	
 	@Override
-	public boolean onItemUseFirst(ItemStack stack, EntityPlayer player,
-			World world, int x, int y, int z, int side, float hitX, float hitY,
-			float hitZ) {
-		
-		NBTTagCompound nbt = stack.getTagCompound();
+	public void readFromNBT(NBTTagCompound par1nbtTagCompound) 
+	{
+		NBTTagCompound nbt = par1nbtTagCompound;
+
 		int n = nbt.getInteger("triangle_count");
 		List<IceTriangle> triangles = new ArrayList<IceTriangle>(n);
 		
@@ -67,11 +64,9 @@ public class ItemSlopedIce extends Item {
 					                      triangle.getBoolean("is_top")));
 		}
 		
-		world.setBlock(x, y, z, ZeldaMod.slopedIceBlock.blockID);
-		((TileEntitySlopedIce)world.getBlockTileEntity(x, y, z)).triangles = triangles;
+		this.triangles = triangles;
 		
-		return true;
+		
 	}
-	
 
 }

@@ -1,4 +1,4 @@
-package com.zeldamod.slopedice;
+package com.zeldamod.item;
 
 import com.zeldamod.ZeldaMod;
 

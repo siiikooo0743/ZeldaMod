@@ -1,14 +1,8 @@
 package com.zeldamod;
 
-import com.zeldamod.dirtslab.BlockDirtSlab;
-import com.zeldamod.pushable.BlockPushable;
-import com.zeldamod.pushable.TileEntityPushable;
-import com.zeldamod.slopedice.BlockSlopedIce;
-import com.zeldamod.slopedice.ItemIceTriangleCreator;
-import com.zeldamod.slopedice.ItemIceTriangleOrigin;
-import com.zeldamod.slopedice.ItemSlopedIce;
-import com.zeldamod.slopedice.TileEntitySlopedIce;
-import com.zeldamod.slopedice.TileEntitySlopedIceRenderer;
+import com.zeldamod.block.*;
+import com.zeldamod.item.*;
+import com.zeldamod.tileEntity.*;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -34,6 +28,10 @@ public class ZeldaMod
 {
 	public static Block dirtSlab;
 	public static Block grassSlab;
+	public static Block deepSnow;
+	public static Block specialTallGrass;
+	public static Block specialGrass;
+	public static Block lockedDoor;
 	
 	public static Block pushable;
 	
@@ -52,6 +50,11 @@ public class ZeldaMod
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{
+		deepSnow = new BlockDeepSnow(1004).setUnlocalizedName("deepSnow");
+		specialTallGrass = new BlockSpecialTallGrass(1005).setUnlocalizedName("specialTallGrass");
+		specialGrass = new BlockSpecialGrass(1006).setUnlocalizedName("specialGrass");
+		lockedDoor = new BlockLockedDoor(1007, Material.iron).setUnlocalizedName("lockedDoor");
+		
 		dirtSlab = new BlockDirtSlab(1000, false, Material.ground).setUnlocalizedName("dirtSlab");
 		grassSlab = new BlockDirtSlab(1001, false, Material.grass).setUnlocalizedName("grassSlab");
 		
@@ -65,8 +68,17 @@ public class ZeldaMod
 		
 		LanguageRegistry.addName(dirtSlab, "Grass Slab");
 		LanguageRegistry.addName(grassSlab, "Grass Slab");
+		LanguageRegistry.addName(deepSnow, "deep Snow");
 		
 		//LanguageRegistry.addName(new ItemStack(grassSlab, 1, 1), "Grass Slab");
+		
+		GameRegistry.registerBlock(deepSnow, "deepSnow");
+		GameRegistry.registerBlock(specialTallGrass, "specialTallGrass");
+		GameRegistry.registerBlock(specialGrass, "specialGrass");
+		GameRegistry.registerBlock(lockedDoor, "lockedDoor");
+		
+		
+			
 		GameRegistry.registerBlock(dirtSlab, "dirtSlab");
 		GameRegistry.registerBlock(grassSlab, "grassSlab");
 		

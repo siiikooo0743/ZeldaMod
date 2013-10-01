@@ -1,4 +1,6 @@
-package com.zeldamod.pushable;
+package com.zeldamod.block;
+
+import com.zeldamod.tileEntity.TileEntityPushable;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;

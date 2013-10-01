@@ -1,4 +1,6 @@
-package com.zeldamod.slopedice;
+package com.zeldamod.block;
+
+import com.zeldamod.tileEntity.TileEntitySlopedIce;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;

@@ -1,4 +1,4 @@
-package com.zeldamod.pushable;
+package com.zeldamod.tileEntity;
 
 import com.zeldamod.ZeldaMod;
 

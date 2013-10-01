@@ -1,7 +1,9 @@
-package com.zeldamod.slopedice;
+package com.zeldamod.item;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import com.zeldamod.misc.IceTriangle;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;

@@ -8,7 +8,7 @@ import net.minecraft.world.World;
 
 public class BlockLockedDoor extends BlockDoor
 {
-	protected BlockLockedDoor(int id, Material material) 
+	public BlockLockedDoor(int id, Material material) 
 	{
 		super(id, material);
 		

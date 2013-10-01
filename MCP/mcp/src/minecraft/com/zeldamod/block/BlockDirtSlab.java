@@ -1,4 +1,4 @@
-package com.zeldamod.dirtslab;
+package com.zeldamod.block;
 
 import com.zeldamod.ZeldaMod;
 

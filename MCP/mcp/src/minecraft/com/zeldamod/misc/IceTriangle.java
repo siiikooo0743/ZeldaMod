@@ -1,4 +1,4 @@
-package com.zeldamod.slopedice;
+package com.zeldamod.misc;
 
 public class IceTriangle
 {

@@ -1,6 +1,8 @@
-package com.zeldamod.slopedice;
+package com.zeldamod.tileEntity;
 
 import org.lwjgl.opengl.GL11;
+
+import com.zeldamod.misc.IceTriangle;
 
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
