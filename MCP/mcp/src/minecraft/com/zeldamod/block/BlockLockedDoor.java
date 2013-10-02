@@ -22,7 +22,6 @@ public class BlockLockedDoor extends Block
 		float f = 0.5F;
         float f1 = 1.0F;
         this.setBlockBounds(0.5F - f, 0.0F, 0.5F - f, 0.5F + f, f1, 0.5F + f);
-		this.setCreativeTab(CreativeTabs.tabBlock);
 	}
 	private void setMeta(World par1World, int x, int y, int z, int metadata)
 	{
@@ -50,7 +49,7 @@ public class BlockLockedDoor extends Block
 	public boolean onBlockActivated(World par1World, int par2, int par3, int par4, EntityPlayer par5EntityPlayer, int par6, float par7, float par8, float par9)
     {
 		int meta = par1World.getBlockMetadata(par2, par3, par4);
-		if(meta < 5)
+		if(meta < 4)
 		{
 			ItemStack is = par5EntityPlayer.inventory.getCurrentItem();
 			if(is == null)
@@ -61,13 +60,14 @@ public class BlockLockedDoor extends Block
 			{
 				par5EntityPlayer.inventory.decrStackSize(par5EntityPlayer.inventory.currentItem, 1);
 				setMeta(par1World, par2, par3, par4, meta + 4);
+				par1World.playAuxSFXAtEntity((EntityPlayer)null, 1003, par2, par3, par4, 0);
 			}
 			
 			return false;
 		}
 		else
 		{
-			if(meta < 9 && meta > 4)
+			if(meta < 8 && meta > 3)
 			{
 				setMeta(par1World, par2, par3, par4, meta + 4);
             }
@@ -84,16 +84,16 @@ public class BlockLockedDoor extends Block
 	public void onPoweredBlockChange(World par1World, int par2, int par3, int par4, boolean newState)
     {
 		int meta = par1World.getBlockMetadata(par2, par3, par4);
-        if (meta < 5)
+        if (meta < 4)
         {
         	return;
         }
         else
         {
-        	boolean state = (meta > 4 && meta < 9);
+        	boolean state = (meta > 3 && meta < 8);
             if(state ^ newState)
             {
-            	if(meta < 9 && meta > 4)
+            	if(meta < 8 && meta > 3)
     			{
     				setMeta(par1World, par2, par3, par4, meta + 4);
                 }
