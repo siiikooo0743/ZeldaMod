@@ -43,6 +43,7 @@ public class ZeldaMod
 	public static Item key;
 	public static Item lockedDoorCreator;
 	public static Item metaTester;
+	public static Item rupee;
 
 	
 	@Instance
@@ -71,12 +72,16 @@ public class ZeldaMod
 		key = new Item(6004).setUnlocalizedName("key").setCreativeTab(CreativeTabs.tabMisc);
 		lockedDoorCreator = new ItemLockedDoor(6005).setUnlocalizedName("lockedDoorCreator").setCreativeTab(CreativeTabs.tabRedstone);
 		metaTester = new ItemMetaTester(6006).setUnlocalizedName("metaTester").setCreativeTab(CreativeTabs.tabTools);
+		rupee = new Item(6007).setUnlocalizedName("rupee").setCreativeTab(CreativeTabs.tabMaterials);
 		
 		LanguageRegistry.addName(dirtSlab, "Grass Slab");
 		LanguageRegistry.addName(grassSlab, "Grass Slab");
 		LanguageRegistry.addName(deepSnow, "deep Snow");
 		LanguageRegistry.addName(lockedDoorCreator, "locked Door");
 		LanguageRegistry.addName(metaTester, "metaTester");
+		LanguageRegistry.addName(rupee, "Rupee");
+		LanguageRegistry.addName(key, "Key");
+		LanguageRegistry.addName(specialGrass, "Rupeengrass");
 		
 		//LanguageRegistry.addName(new ItemStack(grassSlab, 1, 1), "Grass Slab");
 		
@@ -99,6 +104,7 @@ public class ZeldaMod
 		GameRegistry.registerItem(key, "key");
 		GameRegistry.registerItem(lockedDoorCreator, "lockedDoorCreator");
 		GameRegistry.registerItem(metaTester, "metaTester");
+		GameRegistry.registerItem(rupee, "rupee");
 		
 		
 		ClientRegistry.registerTileEntity(TileEntitySlopedIce.class, "slopedIceRender", new TileEntitySlopedIceRenderer() );

@@ -28,10 +28,11 @@ public class BlockSpecialGrass extends Block
 	        int l = par1World.getBlockMetadata(par2, par3, par4);
 	        if (l < 7)
 	        {
-	            float f = 2.0F;
+	        	//je kleiner desto seltener wächst das Gras
+	            float f = 1F;
 	            if (par5Random.nextInt((int)(25.0F / f) + 1) == 0)
 	            {
-	                par1World.setBlock(par2, par3, par4, ZeldaMod.specialTallGrass.blockID);
+	                par1World.setBlock(par2, par3 + 1, par4, ZeldaMod.specialTallGrass.blockID);
 	            }
 	        }
 	    }
