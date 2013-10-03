@@ -54,6 +54,7 @@
 /MCP/mcp/src/minecraft/cpw/*
 /MCP/mcp/src/minecraft/assets/forge/*
 /MCP/mcp/src/bin/*
+/MCP/mcp/src/minecraft-server
 /MCP/mcp/jars/*
 /MCP/mcp/temp/*
 /MCP/mcp/runtime/*
